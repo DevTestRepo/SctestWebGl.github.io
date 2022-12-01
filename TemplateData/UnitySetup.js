@@ -5,25 +5,7 @@
 // Modify or remove this function to customize the visually presented
 // way that non-critical warnings and error messages are presented to the
 // user.
-function unityShowBanner(msg, type) {
-    function updateBannerVisibility() {
-        warningBanner.style.display = warningBanner.children.length
-            ? "block"
-            : "none";
-    }
-    var div = document.createElement("div");
-    div.innerHTML = msg;
-    warningBanner.appendChild(div);
-    if (type == "error") div.style = "background: red; padding: 10px;";
-    else {
-        if (type == "warning") div.style = "background: yellow; padding: 10px;";
-        setTimeout(function () {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-        }, 5000);
-    }
-    updateBannerVisibility();
-}
+
 
 var buildUrl = "Build";
 var loaderUrl = buildUrl + "/Test.loader.js";
@@ -35,7 +17,6 @@ var config = {
     companyName: "DefaultCompany",
     productName: "PhotonReadyPlayerMeVuplex",
     productVersion: "0.1",
-    showBanner: unityShowBanner,
 };
 
 // By default Unity keeps WebGL canvas render target size matched with
@@ -49,11 +30,7 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
     container.className = "unity-mobile";
     // Avoid draining fillrate performance on mobile devices,
     // and default/override low DPI mode on mobile browsers.
-    config.devicePixelRatio = 1;
-    unityShowBanner('WebGL builds are not supported on mobile devices.');
-} else {
-    canvas.style.width = "960px";
-    canvas.style.height = "600px";
+    config.devicePixelRatio = window.devicePixelRatio;
 }
 
 
@@ -68,9 +45,6 @@ script.onload = () => {
         .then((unityInstance) => {
             unityGame = unityInstance;
             loadingBar.style.display = "none";
-            fullscreenButton.onclick = () => {
-                canvasWrapper.requestFullscreen();
-            };
         })
         .catch((message) => {
             alert(message);
