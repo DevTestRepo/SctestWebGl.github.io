@@ -136,6 +136,17 @@
     </style>
   </head>
   <body >
+  <script>
+
+document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState == "hidden") {
+        SendMessage("GameManger", "Subscribe");
+    } else {
+        SendMessage("GameManger", "Unsubscribe");
+    }
+});
+
+</script>
   <div id="unity-container" class="unity-desktop">
     <div id="canvas-wrap" >
       <div id="rpm-container">
