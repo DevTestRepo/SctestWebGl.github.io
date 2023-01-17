@@ -4,17 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<script>
-
-document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState == "hidden") {
-        SendMessage("GameManger", "Subscribe");
-    } else {
-        SendMessage("GameManger", "Unsubscribe");
-    }
-});
-
-</script>
 	<style>
   html {
             box-sizing: border-box;
@@ -147,6 +136,17 @@ document.addEventListener('visibilitychange', function () {
     </style>
   </head>
   <body >
+  <script>
+
+document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState == "hidden") {
+        SendMessage("NewGameManger", "Subscribe");
+    } else {
+        SendMessage("NewGameManger", "Unsubscribe");
+    }
+});
+
+</script>
   <div id="unity-container" class="unity-desktop">
     <div id="canvas-wrap" >
       <div id="rpm-container">
