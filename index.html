@@ -156,16 +156,18 @@
 
           function checkCookies() {
               var myGameInstance = null;
+              var isActive;
+
               createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
                   myGameInstance = unityInstance;
               });
               document.addEventListener('visibilitychange', function () {
                   if (document.visibilityState == "hidden") {
                       //  window.print("hidden");
-                      myGameInstance.SendMessage("TestConnection", "Subscribe");
+                      myGameInstance.SendMessage("TestConnection", "Disconnect");
                   } else {
                       // window.print("Unhidden");
-                      myGameInstance.SendMessage("TestConnection", "Unsubscribe");
+                      myGameInstance.SendMessage("TestConnection", "Reconnect");
                   }
               });
           }
