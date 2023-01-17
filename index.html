@@ -157,17 +157,18 @@
 
 
    var myGameInstance = null;
-   script.onload = () => {
-    createUnityInstance(canvas, config, (progress) => {}).then((unityInstance) => {
-      myGameInstance = unityInstance;} 
-								
-document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState == "hidden") {
-       myGameInstance.SendMessage("NewGameManger", "Subscribe");
-    } else {
-        myGameInstance.SendMessage("NewGameManger", "Unsubscribe");
-    }
-});});
+      script.onload = () => {
+          createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
+              myGameInstance = unityInstance;
+          });
+          document.addEventListener('visibilitychange', function () {
+              if (document.visibilityState == "hidden") {
+                  myGameInstance.SendMessage("NewGameManger", "Subscribe");
+              } else {
+                  myGameInstance.SendMessage("NewGameManger", "Unsubscribe");
+              }
+          });
+      }
 </script>
     <script src="TemplateData/Global.js"></script>
     <script src="TemplateData/UnitySetup.js"></script>
