@@ -163,13 +163,13 @@
               document.addEventListener('visibilitychange', function () {
                   if (document.visibilityState == "hidden") {
                       //  window.print("hidden");
- console.log("Hidden");
+                            console.log("Hidden");
 
                       myGameInstance.SendMessage("TestConnection", "Disconnect");
                      
                   } else {
                       // window.print("Unhidden");
-  console.log("NotHidden");
+                            console.log("NotHidden");
                       myGameInstance.SendMessage("TestConnection", "Reconnect");
                     
 
