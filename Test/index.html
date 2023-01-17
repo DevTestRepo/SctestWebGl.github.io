@@ -135,7 +135,7 @@
         }
     </style>
   </head>
-  <body onload="checkCookies()">
+  <body>
       <div id="unity-container" class="unity-desktop">
           <div id="canvas-wrap">
               <div id="rpm-container">
@@ -151,10 +151,10 @@
               </div>
           </div>
       </div>
-      <script>
+     <script>
 
 
-          function checkCookies() {
+          /*function checkCookies() {
               var myGameInstance = null;
 
               createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
@@ -163,18 +163,18 @@
               document.addEventListener('visibilitychange', function () {
                   if (document.visibilityState == "hidden") {
                       //  window.print("hidden");
-                            console.log("Hidden");
+ console.log("Hidden");
 
                       myGameInstance.SendMessage("TestConnection", "Disconnect");
                      
                   } else {
                       // window.print("Unhidden");
-                            console.log("NotHidden");
+  console.log("NotHidden");
                       myGameInstance.SendMessage("TestConnection", "Reconnect");
                     
 
                   }
-              });
+              });*/
           }
       </script>
       <script src="TemplateData/Global.js"></script>
