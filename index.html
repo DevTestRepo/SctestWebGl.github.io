@@ -135,7 +135,7 @@
         }
     </style>
   </head>
-  <body>
+  <body  onload="checkCookies()">
   <div id="unity-container" class="unity-desktop">
     <div id="canvas-wrap" >
       <div id="rpm-container">
@@ -155,19 +155,19 @@
 
 
       function checkCookies() {
-          var myGameInstance = null;
+         /* var myGameInstance = null;
           createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
               myGameInstance = unityInstance;
           });
           document.addEventListener('visibilitychange', function () {
               if (document.visibilityState == "hidden") {
                 //  window.print("hidden");
-                //  myGameInstance.SendMessage("NewGameManger", "Subscribe");
+                  myGameInstance.SendMessage("NewGameManger", "Subscribe");
               } else {
                  // window.print("Unhidden");
-                 // myGameInstance.SendMessage("NewGameManger", "Unsubscribe");
+                  myGameInstance.SendMessage("NewGameManger", "Unsubscribe");
               }
-          });
+          });*/
       }
 </script>
     <script src="TemplateData/Global.js"></script>
