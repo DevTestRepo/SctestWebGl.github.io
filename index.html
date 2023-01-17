@@ -152,18 +152,17 @@
   </div>
   </div>
   <script>
-   var myGameInstance = null;
-   script.onload = () => {
-    createUnityInstance(canvas, config, (progress) => {...}).then((unityInstance) => {
-      myGameInstance = unityInstance; });
-								
-document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState == "hidden") {
-       myGameInstance.SendMessage("NewGameManger", "Subscribe");
-    } else {
-        myGameInstance.SendMessage("NewGameManger", "Unsubscribe");
-    }
-});
+script.onload = async () => {
+ const intance = createUnityInstance(canvas, config, (progress) => {
+   progressBarFull.style.width = 100 * progress + "%";
+ }).then((unityInstance) => {
+   loadingBar.style.display = "none";
+ }).catch((message) => {
+   alert(message);
+ });
+
+ instance.SendMessage("NewGameManger", "DoSomething");
+};
 </script>
     <script src="TemplateData/Global.js"></script>
     <script src="TemplateData/UnitySetup.js"></script>
