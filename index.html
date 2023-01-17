@@ -136,17 +136,9 @@
     </style>
   </head>
   <body >
-  <script>
 
-document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState == "hidden") {
-        SendMessage("NewGameManger", "Subscribe");
-    } else {
-        SendMessage("NewGameManger", "Unsubscribe");
-    }
-});
 
-</script>
+
   <div id="unity-container" class="unity-desktop">
     <div id="canvas-wrap" >
       <div id="rpm-container">
@@ -162,7 +154,16 @@ document.addEventListener('visibilitychange', function () {
     </div>
   </div>
   </div>
+  <script>
 
+document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState == "hidden") {
+        SendMessage("TestConnection", "Subscribe");
+    } else {
+        SendMessage("TestConnection", "Unsubscribe");
+    }
+});
+</script>
     <script src="TemplateData/Global.js"></script>
     <script src="TemplateData/UnitySetup.js"></script>
    <script src="TemplateData/ReadyPlayerMeFrame.js"></script>
