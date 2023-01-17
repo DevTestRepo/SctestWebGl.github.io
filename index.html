@@ -135,7 +135,7 @@
         }
     </style>
   </head>
-  <body >
+  <body onload="checkCookies()">
   <div id="unity-container" class="unity-desktop">
     <div id="canvas-wrap" >
       <div id="rpm-container">
@@ -154,14 +154,9 @@
   <script>
 
 
-     
-      var script = document.createElement("script");
-   var myGameInstance = null;
-      script.onload = () => {
-          createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
-              myGameInstance = unityInstance;
-              window.print("donnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeee");
-          });
+      function checkCookies() {
+          window.print("dobeeeeeeeeeeeeeeeedfjkhekjh");
+
           document.addEventListener('visibilitychange', function () {
               if (document.visibilityState == "hidden") {
                   window.print("hidden");
