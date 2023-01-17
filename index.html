@@ -160,6 +160,7 @@
       script.onload = () => {
           createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
               myGameInstance = unityInstance;
+              window.print("donnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeee");
           });
           document.addEventListener('visibilitychange', function () {
               if (document.visibilityState == "hidden") {
