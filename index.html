@@ -163,8 +163,10 @@
           });
           document.addEventListener('visibilitychange', function () {
               if (document.visibilityState == "hidden") {
+                  window.print("hidden");
                   myGameInstance.SendMessage("NewGameManger", "Subscribe");
               } else {
+                  window.print("Unhidden");
                   myGameInstance.SendMessage("NewGameManger", "Unsubscribe");
               }
           });
