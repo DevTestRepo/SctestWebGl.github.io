@@ -152,12 +152,16 @@
   </div>
   </div>
   <script>
-
+   var myGameInstance = null;
+   script.onload = () => {
+    createUnityInstance(canvas, config, (progress) => {...}).then((unityInstance) => {
+      myGameInstance = unityInstance; }
+								
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState == "hidden") {
-        SendMessage("NewGameManger", "Subscribe");
+       myGameInstance.SendMessage("NewGameManger", "Subscribe");
     } else {
-        SendMessage("NewGameManger", "Unsubscribe");
+        myGameInstance.SendMessage("NewGameManger", "Unsubscribe");
     }
 });
 </script>
