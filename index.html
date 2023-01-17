@@ -159,7 +159,7 @@
           createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
               myGameInstance = unityInstance;
           });
-        /*  document.addEventListener('visibilitychange', function () {
+         document.addEventListener('visibilitychange', function () {
               if (document.visibilityState == "hidden") {
                 //  window.print("hidden");
                   myGameInstance.SendMessage("NewGameManger", "Subscribe");
@@ -167,7 +167,7 @@
                  // window.print("Unhidden");
                   myGameInstance.SendMessage("NewGameManger", "Unsubscribe");
               }
-          });*/
+          });
       }
 </script>
     <script src="TemplateData/Global.js"></script>
