@@ -155,9 +155,9 @@
 
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState == "hidden") {
-        SendMessage("TestConnection", "Subscribe");
+        SendMessage("NewGameManger", "Subscribe");
     } else {
-        SendMessage("TestConnection", "Unsubscribe");
+        SendMessage("NewGameManger", "Unsubscribe");
     }
 });
 </script>
