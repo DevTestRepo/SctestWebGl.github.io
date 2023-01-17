@@ -164,9 +164,13 @@
                   if (document.visibilityState == "hidden") {
                       //  window.print("hidden");
                       myGameInstance.SendMessage("TestConnection", "Disconnect");
+                      console.log("Hidden");
+
                   } else {
                       // window.print("Unhidden");
                       myGameInstance.SendMessage("TestConnection", "Reconnect");
+                      console.log("NotHidden");
+
                   }
               });
           }
