@@ -135,7 +135,7 @@
         }
     </style>
   </head>
-  <body>
+  <body onload="checkCookies()">
       <div id="unity-container" class="unity-desktop">
           <div id="canvas-wrap">
               <div id="rpm-container">
@@ -155,7 +155,7 @@
 
 
           function checkCookies() {
-             /* var myGameInstance = null;
+              var myGameInstance = null;
 
               createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
                   myGameInstance = unityInstance;
@@ -168,7 +168,7 @@
                       // window.print("Unhidden");
                       myGameInstance.SendMessage("TestConnection", "Reconnect");
                   }
-              });*/
+              });
           }
       </script>
       <script src="TemplateData/Global.js"></script>
