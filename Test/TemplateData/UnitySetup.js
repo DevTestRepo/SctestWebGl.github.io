@@ -49,10 +49,13 @@ script.onload = () => {
 
             MyGameInstance = unityInstance;
             if (MyGameInstance != null) {
-                UnityInstanceStatus = false;
+                UnityInstanceStatus = true;
+                console.log("instance not null");
             }
             else {
-                UnityInstanceStatus = true;
+                UnityInstanceStatus = false;
+                console.log("instance  null");
+
             }
            
 
