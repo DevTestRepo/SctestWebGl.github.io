@@ -135,7 +135,7 @@
         }
     </style>
   </head>
-  <body onload="start()">
+  <body >
       <div id="unity-container" class="unity-desktop">
           <div id="canvas-wrap">
               <div id="rpm-container">
@@ -153,11 +153,8 @@
       </div>
       <script src="TemplateData/Global.js"></script>
       <script src="TemplateData/UnitySetup.js"></script>
-      <script src="TemplateData/ReadyPlayerMeFrame.js"></script>
+      <script src="TemplateData/ReadyPlayerMeFrame.js" onload="start()"></script>
       <script>
-
-
-
           function start() {
               var myTimeout = setTimeout(checkCookies, 5000);
           }
