@@ -46,7 +46,7 @@ script.onload = () => {
         .then((unityInstance) => {
             unityGame = unityInstance;
             loadingBar.style.display = "none";
-
+            console.log("instance");
             MyGameInstance = unityInstance;
             if (MyGameInstance != null) {
                 UnityInstanceStatus = true;
