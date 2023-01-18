@@ -43,10 +43,10 @@ script.onload = () => {
         progressBarFull.style.width = 100 * progress + "%";
     })
         .then((unityInstance) => {
-            unityGame = unityInstance;
+         var unityGame = unityInstance;
             loadingBar.style.display = "none";
 
-         export { unityGame };
+       
 
         })
         .catch((message) => {
@@ -56,4 +56,5 @@ script.onload = () => {
 
 
 };
+export { unityGame };
 document.body.appendChild(script);
