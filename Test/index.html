@@ -135,7 +135,7 @@
         }
     </style>
   </head>
-  <body >
+  <body>
       <div id="unity-container" class="unity-desktop">
           <div id="canvas-wrap">
               <div id="rpm-container">
@@ -151,9 +151,7 @@
               </div>
           </div>
       </div>
-      <script src="TemplateData/Global.js"></script>
-      <script src="TemplateData/UnitySetup.js"></script>
-      <script src="TemplateData/ReadyPlayerMeFrame.js"></script>
+
       <script>
           //function start() {
           //    var myTimeout = setTimeout(checkCookies, 5000);
@@ -180,14 +178,14 @@
           //          }
           //      });
           //     clearTimeout(myTimeout);
-       
+
           const script = document.createElement("script");
           script.src = loaderUrl;
           script.onload = () => {
               createUnityInstance(canvas, config, (progress) => {
                   //spinner.style.display = "none";
-                 // progressBarEmpty.style.display = "";
-//progressBarFull.style.width = `${100 * progress}%`;
+                  // progressBarEmpty.style.display = "";
+                  //progressBarFull.style.width = `${100 * progress}%`;
               }).then((unityInstance) => {
                   console.log("sxdfsdfsdfsd");
               }).catch((message) => {
@@ -196,6 +194,8 @@
           };
           document.body.appendChild(script);
       </script>
-
+      <script src="TemplateData/Global.js"></script>
+      <script src="TemplateData/UnitySetup.js"></script>
+      <script src="TemplateData/ReadyPlayerMeFrame.js"></script>
   </body>
 </html>
