@@ -156,10 +156,11 @@
       <script src="TemplateData/ReadyPlayerMeFrame.js" ></script>
       <script>
           function createGameInstance() {
-              var myGameInstance = null;
+             // var myGameInstance = null;
               console.log("sxdfsdfsdfsd");
               createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
-                  myGameInstance = unityInstance;
+                //  myGameInstance = unityInstance;
+                  window.uarGameInstance = unityInstance;
                  // checkCookies();
 
               });
