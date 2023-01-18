@@ -45,9 +45,27 @@ script.onload = () => {
         .then((unityInstance) => {
             unityGame = unityInstance;
             loadingBar.style.display = "none";
+            document.addEventListener('visibilitychange', function () {
+                if (document.visibilityState == "hidden") {
+                     window.print("hidden");
+
+
+                    ///   myGameInstance.SendMessage("TestConnection", "Disconnect");
+
+                } else {
+                    // window.print("Unhidden");
+                    console.log("NotHidden");
+                    //   myGameInstance.SendMessage("TestConnection", "Reconnect");
+
+
+                }
+            });
         })
         .catch((message) => {
             alert(message);
         });
+
+
+
 };
 document.body.appendChild(script);
