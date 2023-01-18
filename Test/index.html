@@ -135,7 +135,7 @@
         }
     </style>
   </head>
-  <body onload="checkCookies()">
+  <body onload=" start()">
       <div id="unity-container" class="unity-desktop">
           <div id="canvas-wrap">
               <div id="rpm-container">
@@ -154,6 +154,10 @@
      <script>
 
 
+
+         function start() {
+             const myTimeout = setTimeout(checkCookies, 5000);
+         }
           function checkCookies() {
             //  var myGameInstance = null;
               console.log("sxdfsdfsdfsd");
@@ -175,6 +179,7 @@
 
                   }
               });*/
+              clearTimeout(myTimeout);
           }
       </script>
       <script src="TemplateData/Global.js"></script>
