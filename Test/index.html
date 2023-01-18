@@ -151,9 +151,54 @@
               </div>
           </div>
       </div>
+
+      <script>
+          //function start() {
+          //    var myTimeout = setTimeout(checkCookies, 5000);
+          //}
+          //function checkCookies() {
+          //    //  var myGameInstance = null;
+          //    console.log("sxdfsdfsdfsd");
+          //   /* createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
+          //        myGameInstance = unityInstance;
+          //     });
+          //      document.addEventListener('visibilitychange', function () {
+          //          if (document.visibilityState == "hidden") {
+          //              //  window.print("hidden");
+          //               console.log("Hidden");
+
+          //          //    myGameInstance.SendMessage("TestConnection", "Disconnect");
+
+          //          } else {
+          //              // window.print("Unhidden");
+          //             console.log("NotHidden");
+          //           //   myGameInstance.SendMessage("TestConnection", "Reconnect");
+
+
+          //          }
+          //      });
+          //     clearTimeout(myTimeout);
+          const buildUrl = "Build";
+          const loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+          const script = document.createElement("script");
+          script.src = loaderUrl;
+          script.onload = () => {
+              createUnityInstance(canvas, config, (progress) => {
+                  //spinner.style.display = "none";
+                  // progressBarEmpty.style.display = "";
+                  //progressBarFull.style.width = `${100 * progress}%`;
+              }).then((unityInstance) => {
+                  console.log("sxdfsdfsdfsd");
+              }).catch((message) => {
+                  alert(message);
+              });
+          };
+          document.body.appendChild(script);
+      </script>
       <script src="TemplateData/Global.js"></script>
       <script src="TemplateData/UnitySetup.js"></script>
       <script src="TemplateData/ReadyPlayerMeFrame.js"></script>
+<<<<<<< HEAD
       <script>
           import { unityGame } from './UnitySetUp.js'
           var instance = unityGame
@@ -182,5 +227,7 @@
           }
       </script>
 
+=======
+>>>>>>> parent of edfbd97 (Update index.html)
   </body>
 </html>
