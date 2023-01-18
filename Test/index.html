@@ -180,19 +180,25 @@
           //          }
           //      });
           //     clearTimeout(myTimeout);
+          //-----------------------------//
+         //  script = document.createElement("script");
+          //script.src = loaderUrl;
+          //script.onload = () => {
+          //    createUnityInstance(canvas, config, (progress) => {
 
-           script = document.createElement("script");
-          script.src = loaderUrl;
-          script.onload = () => {
-              createUnityInstance(canvas, config, (progress) => {
-
-              }).then((unityInstance) => {
-                  console.log("sxdfsdfsdfsd");
-              }).catch((message) => {
-                  alert(message);
-              });
-          };
-          document.body.appendChild(script);
+          //    }).then((unityInstance) => {
+          //        console.log("sxdfsdfsdfsd");
+          //    }).catch((message) => {
+          //        alert(message);
+          //    });
+          //};
+          //document.body.appendChild(script);
+          if (MyGameInstance == null) {
+              console.log("Nullllllllllllllllllllllllllllllll");
+          }
+          else {
+              console.log("sfsddddddddddddddddddddddddddddddddddddddddddddddddd");
+          }
       </script>
 
   </body>

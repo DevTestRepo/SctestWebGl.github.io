@@ -6,7 +6,8 @@
 // way that non-critical warnings and error messages are presented to the
 // user.
 
-
+var MyGameInstance;
+var UnityInstanceStatus = false;
 var buildUrl = "Build";
 var loaderUrl = buildUrl + "/Test.loader.js";
 var config = {
@@ -43,10 +44,11 @@ script.onload = () => {
         progressBarFull.style.width = 100 * progress + "%";
     })
         .then((unityInstance) => {
-         var unityGame = unityInstance;
+            unityGame = unityInstance;
             loadingBar.style.display = "none";
 
-       
+            MyGameInstance = unityInstance;
+            UnityInstanceStatus = true;
 
         })
         .catch((message) => {
