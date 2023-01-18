@@ -135,7 +135,7 @@
         }
     </style>
   </head>
-  <body onload="createGameInstance()" >
+  <body onload="start()" >
       <div id="unity-container" class="unity-desktop">
           <div id="canvas-wrap">
               <div id="rpm-container">
@@ -160,13 +160,14 @@
               console.log("sxdfsdfsdfsd");
               createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
                   myGameInstance = unityInstance;
-                  checkCookies();
+                 // checkCookies();
 
               });
           }
-          /*function start() {
-              var myTimeout = setTimeout(checkCookies, 5000);
-          }*/
+          console.log("sdfsdfsdfsdfsdfsdf");
+          function start() {
+              var myTimeout = setTimeout(createGameInstance, 5000);
+          }
           function checkCookies() {
 
               console.log("Hidden");
