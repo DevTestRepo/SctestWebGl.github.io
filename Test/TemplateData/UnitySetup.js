@@ -48,8 +48,13 @@ script.onload = () => {
             loadingBar.style.display = "none";
 
             MyGameInstance = unityInstance;
-            console.log("Instance");
-            UnityInstanceStatus = true;
+            if (MyGameInstance != null) {
+                UnityInstanceStatus = false;
+            }
+            else {
+                UnityInstanceStatus = true;
+            }
+           
 
         })
         .catch((message) => {
