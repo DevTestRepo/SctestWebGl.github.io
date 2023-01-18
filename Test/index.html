@@ -164,20 +164,7 @@
           //   /* createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
           //        myGameInstance = unityInstance;
           //     });
-          //      document.addEventListener('visibilitychange', function () {
-          //          if (document.visibilityState == "hidden") {
-          //              //  window.print("hidden");
-          //               console.log("Hidden");
-
-          //          //    myGameInstance.SendMessage("TestConnection", "Disconnect");
-
-          //          } else {
-          //              // window.print("Unhidden");
-          //             console.log("NotHidden");
-          //           //   MyGameInstance.SendMessage("TestConnection", "Reconnect");
-
-
-          //          }
+               
           //      });
           //     clearTimeout(myTimeout);
           //-----------------------------//
@@ -194,7 +181,16 @@
           //};
           //document.body.appendChild(script);
           console.log("sdasdasdasd", UnityInstanceStatus);
-          MyGameInstance.SendMessage("TestConnection", "Reconnect");
+          document.addEventListener('visibilitychange', function () {
+              if (document.visibilityState == "hidden") {
+
+                  MyGameInstance.SendMessage("TestConnection", "Disconnect");
+
+              } else {
+                   MyGameInstance.SendMessage("TestConnection", "Reconnect");
+
+
+              }
       </script>
 
   </body>
