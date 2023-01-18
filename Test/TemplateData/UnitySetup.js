@@ -56,5 +56,4 @@ script.onload = () => {
 
 
 };
-export { unityGame };
 document.body.appendChild(script);
