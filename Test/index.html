@@ -178,7 +178,8 @@
           //          }
           //      });
           //     clearTimeout(myTimeout);
-
+          const buildUrl = "Build";
+          const loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
           const script = document.createElement("script");
           script.src = loaderUrl;
           script.onload = () => {
