@@ -155,32 +155,32 @@
       <script src="TemplateData/UnitySetup.js"></script>
       <script src="TemplateData/ReadyPlayerMeFrame.js"></script>
       <script>
-          function start() {
-              var myTimeout = setTimeout(checkCookies, 5000);
-          }
-          function checkCookies() {
-              //  var myGameInstance = null;
-              console.log("sxdfsdfsdfsd");
-             /* createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
-                  myGameInstance = unityInstance;
-               });*/
-              /*  document.addEventListener('visibilitychange', function () {
-                    if (document.visibilityState == "hidden") {
-                        //  window.print("hidden");
-                         console.log("Hidden");
+          //function start() {
+          //    var myTimeout = setTimeout(checkCookies, 5000);
+          //}
+          //function checkCookies() {
+          //    //  var myGameInstance = null;
+          //    console.log("sxdfsdfsdfsd");
+          //   /* createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
+          //        myGameInstance = unityInstance;
+          //     });
+          //      document.addEventListener('visibilitychange', function () {
+          //          if (document.visibilityState == "hidden") {
+          //              //  window.print("hidden");
+          //               console.log("Hidden");
 
-                    //    myGameInstance.SendMessage("TestConnection", "Disconnect");
+          //          //    myGameInstance.SendMessage("TestConnection", "Disconnect");
 
-                    } else {
-                        // window.print("Unhidden");
-                       console.log("NotHidden");
-                     //   myGameInstance.SendMessage("TestConnection", "Reconnect");
+          //          } else {
+          //              // window.print("Unhidden");
+          //             console.log("NotHidden");
+          //           //   myGameInstance.SendMessage("TestConnection", "Reconnect");
 
 
-                    }
-                });*/
-              // clearTimeout(myTimeout);
-          }
+          //          }
+          //      });
+          //     clearTimeout(myTimeout);
+       
           const script = document.createElement("script");
           script.src = loaderUrl;
           script.onload = () => {
@@ -189,7 +189,7 @@
                  // progressBarEmpty.style.display = "";
 //progressBarFull.style.width = `${100 * progress}%`;
               }).then((unityInstance) => {
-                  start();
+                  console.log("sxdfsdfsdfsd");
               }).catch((message) => {
                   alert(message);
               });
