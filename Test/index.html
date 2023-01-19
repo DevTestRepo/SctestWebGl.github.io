@@ -135,64 +135,25 @@
         }
     </style>
   </head>
-  <body>
-      <div id="unity-container" class="unity-desktop">
-          <div id="canvas-wrap">
-              <div id="rpm-container">
-                  <iframe id="rpm-frame" class="rpm-frame" allow="camera *; microphone *"></iframe>
-                  <button id="rpm-hide-button" onclick="hideRpm()">Hide</button>
-              </div>
-              <canvas id="unity-canvas"></canvas>
-          </div>
-          <div id="unity-loading-bar">
-              <div id="unity-logo"></div>
-              <div id="unity-progress-bar-empty">
-                  <div id="unity-progress-bar-full"></div>
-              </div>
-          </div>
+  <body >
+  <div id="unity-container" class="unity-desktop">
+    <div id="canvas-wrap" >
+      <div id="rpm-container">
+        <iframe id="rpm-frame" class="rpm-frame" allow="camera *; microphone *"></iframe>
+        <button id="rpm-hide-button" onclick="hideRpm()">Hide</button>
       </div>
-      <script src="TemplateData/Global.js"></script>
-      <script src="TemplateData/UnitySetup.js"></script>
-      <script src="TemplateData/ReadyPlayerMeFrame.js"></script>
-      <script>
-          //function start() {
-          //    var myTimeout = setTimeout(checkCookies, 5000);
-          //}
-          //function checkCookies() {
-          //    //  var myGameInstance = null;
-          //    console.log("sxdfsdfsdfsd");
-          //   /* createUnityInstance(canvas, config, (progress) => { }).then((unityInstance) => {
-          //        myGameInstance = unityInstance;
-          //     });
-               
-          //      });
-          //     clearTimeout(myTimeout);
-          //-----------------------------//
-         //  script = document.createElement("script");
-          //script.src = loaderUrl;
-          //script.onload = () => {
-          //    createUnityInstance(canvas, config, (progress) => {
+      <canvas id="unity-canvas" ></canvas>
+    </div>
+  <div id="unity-loading-bar">
+    <div id="unity-logo"></div>
+    <div id="unity-progress-bar-empty">
+      <div id="unity-progress-bar-full"></div>
+    </div>
+  </div>
+  </div>
 
-          //    }).then((unityInstance) => {
-          //        console.log("sxdfsdfsdfsd");
-          //    }).catch((message) => {
-          //        alert(message);
-          //    });
-          //};
-          //document.body.appendChild(script);
-          console.log("sdasdasdasd", UnityInstanceStatus);
-          document.addEventListener('visibilitychange', function () {
-              if (document.visibilityState == "hidden") {
-
-                  MyGameInstance.SendMessage("TestConnection", "Disconnect");
-
-              } else {
-                  MyGameInstance.SendMessage("TestConnection", "Reconnect");
-
-
-              }
-          });
-      </script>
-
+    <script src="TemplateData/Global.js"></script>
+    <script src="TemplateData/UnitySetup.js"></script>
+   <script src="TemplateData/ReadyPlayerMeFrame.js"></script>
   </body>
 </html>

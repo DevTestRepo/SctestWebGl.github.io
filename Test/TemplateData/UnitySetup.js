@@ -6,8 +6,7 @@
 // way that non-critical warnings and error messages are presented to the
 // user.
 
-var MyGameInstance;
-var UnityInstanceStatus = false;
+
 var buildUrl = "Build";
 var loaderUrl = buildUrl + "/Test.loader.js";
 var config = {
@@ -46,25 +45,9 @@ script.onload = () => {
         .then((unityInstance) => {
             unityGame = unityInstance;
             loadingBar.style.display = "none";
-            console.log("instance");
-            MyGameInstance = unityInstance;
-            if (MyGameInstance != null) {
-                UnityInstanceStatus = true;
-                console.log("instance not null");
-            }
-            else {
-                UnityInstanceStatus = false;
-                console.log("instance  null");
-
-            }
-           
-
         })
         .catch((message) => {
             alert(message);
         });
-
-
-
 };
 document.body.appendChild(script);
