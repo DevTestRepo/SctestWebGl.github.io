@@ -8,11 +8,11 @@
 
 
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/Test.loader.js";
+var loaderUrl = buildUrl + "/Build.loader.js";
 var config = {
-    dataUrl: buildUrl + "/Test.data",
-    frameworkUrl: buildUrl + "/Test.framework.js",
-    codeUrl: buildUrl + "/Test.wasm",
+    dataUrl: buildUrl + "/Build.data",
+    frameworkUrl: buildUrl + "/Build.framework.js",
+    codeUrl: buildUrl + "/Build.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "DefaultCompany",
     productName: "PhotonReadyPlayerMeVuplex",
