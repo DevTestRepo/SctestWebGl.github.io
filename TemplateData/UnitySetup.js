@@ -34,12 +34,12 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 }
 
 
-loadingBar.style.display = "block";
 
 var script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
-    createUnityInstance(canvas, config, (progress) => {
+loadingBar.style.display = "block";
+createUnityInstance(canvas, config, (progress) => {
         progressBarFull.style.width = 100 * progress + "%";
     })
         .then((unityInstance) => {
