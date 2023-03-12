@@ -38,7 +38,6 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 var script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
-loadingBar.style.display = "block";
 createUnityInstance(canvas, config, (progress) => {
     })
         .then((unityInstance) => {
