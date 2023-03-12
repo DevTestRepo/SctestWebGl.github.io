@@ -133,6 +133,17 @@
                 transform: rotate(360deg);
             }
         }
+        #loader {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     </style>
   </head>
   <body >
@@ -155,6 +166,14 @@
     </div>
   </div>
   </div>
+  <div id="loader">
+    <div class="progress">
+        <div class="full"></div>
+    </div>
+    <div id="LoadingText" class="centerBottom">
+        <p style="color:#FFFFFF";>Your guide is loading... this may take a while</p>
+    </div>
+</div>
 
     <script src="TemplateData/Global.js"></script>
     <script src="TemplateData/UnitySetup.js"></script>

@@ -45,6 +45,8 @@ createUnityInstance(canvas, config, (progress) => {
         .then((unityInstance) => {
             unityGame = unityInstance;
             loadingBar.style.display = "none";
+            loader.style.display = "none";
+
         })
         .catch((message) => {
             alert(message);
