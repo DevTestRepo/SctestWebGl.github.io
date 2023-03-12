@@ -34,7 +34,7 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 }
 
 
-spinner.style.display = "block";
+loadingBar.style.display = "block";
 
 var script = document.createElement("script");
 script.src = loaderUrl;
@@ -44,7 +44,7 @@ script.onload = () => {
     })
         .then((unityInstance) => {
             unityGame = unityInstance;
-            spinner.style.display = "none";
+            loadingBar.style.display = "none";
         })
         .catch((message) => {
             alert(message);
