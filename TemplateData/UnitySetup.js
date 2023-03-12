@@ -38,7 +38,7 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 var script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
-createUnityInstance(canvas, config, (progress) => {
+createUnityInstance(canvas, config, () => {
     })
         .then((unityInstance) => {
             unityGame = unityInstance;
