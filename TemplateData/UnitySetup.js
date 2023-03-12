@@ -40,16 +40,30 @@ script.src = loaderUrl;
 script.onload = () => {
 loadingBar.style.display = "block";
 createUnityInstance(canvas, config, (progress) => {
-        progressBarFull.style.width = 100 * progress + "%";
     })
         .then((unityInstance) => {
             unityGame = unityInstance;
-            loadingBar.style.display = "none";
-            loader.style.display = "none";
+        
+            if (!gameInstance.Module) {
+                return;
+            }
+            window.uarGameInstance = gameInstance;
+            if (!gameInstance.progress) {
+                const progress = document.querySelector("#loader .progress");
+                progress.style.display = "block";
+                gameInstance.progress = progress.querySelector(".full");
+            }
+            gameInstance.progress.style.transform = `scaleX(${progress})`;
+            if (progress === 1 && !gameInstance.removeTimeout) {
+                gameInstance.removeTimeout = setTimeout(function () {
+                    loader.style.display = "none";
+                }, 0); // optionally set a delay in here.
+            }
 
         })
         .catch((message) => {
             alert(message);
         });
 };
+
 document.body.appendChild(script);

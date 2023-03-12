@@ -5,135 +5,71 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<style>
-   html {
-            box-sizing: border-box;
-        }
+   body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
 
-        *,
-        *:before,
-        *:after {
-            box-sizing: inherit;
-        }
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
 
-        html,
-        body {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-        }
+    #gameContainer {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
 
-        canvas {
-            display: block;
-        }
+    #fullScreenToggle {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
 
-        body {
-            margin: 0;
-        }
-
-        #unity-container {
-            width: 100%;
-            height: 100%;
-        }
-
-        #unity-canvas {
-            width: 100%;
-            height: 100%;
-            background:  rgb(0, 0, 0);
-        }
-      #rpm-container
-{
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  position:absolute;
-  display:none;
-  pointer-events: inherit;
+    a {
+  color: #0295FF;
 }
 
-.rpm-frame {
-  width: 100%;
-  height: 95%;
+
+.center {
   margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-  Droid Sans, Helvetica Neue, sans-serif;
-  font-size: 14px;
-  border: none;
-  display:block;
-  pointer-events: inherit;
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: -99999999;
+  display: none;
+   
 }
-        #loading-cover {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
 
-        #unity-loading-bar {
-            flex: 1 1 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+.centerBottom {
+ text-align: center;
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  z-index: 99999999;
+  display: block;
+   
+}
 
-        #unity-progress-bar-empty {
-            width: 80%;
-            height: 24px;
-            margin: 10px 20px 20px 10px;
-            text-align: left;
-            border: 1px solid white;
-            padding: 2px;
-        }
+    .progress {
+        margin: 1.5em;
+        border: 1px solid white;
+        width: 50vw;
+        display: none;
+    }
 
-        #unity-progress-bar-full {
-            width: 0%;
-            height: 100%;
-            background: white;
-        }
+    .progress .full {
+        margin: 2px;
+        background: white;
+        height: 1em;
+        transform-origin: top left;
+    }
 
-        .light #unity-progress-bar-empty {
-            border-color: black;
-        }
-
-        .light #unity-progress-bar-full {
-            background: rgb(223, 23, 23);
-        }
-
-        .spinner,
-        .spinner:after {
-            border-radius: 50%;
-            width: 5em;
-            height: 5em;
-        }
-
-        .spinner {
-            margin: 10px;
-            font-size: 10px;
-            position: relative;
-            text-indent: -9999em;
-            border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-            border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-            border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-            border-left: 1.1em solid #ffffff;
-            transform: translateZ(0);
-            animation: spinner-spin 1.1s infinite linear;
-        }
-
-        @keyframes spinner-spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        #loader {
+    #loader {
         position: absolute;
         left: 0;
         top: 0;
@@ -156,15 +92,6 @@
       </div>
       <canvas id="unity-canvas" ></canvas>
     </div>
-
-
-  <div id="unity-loading-bar">
-    <div id="unity-logo">
-    </div>
-    <div id="unity-progress-bar-empty">
-      <div id="unity-progress-bar-full"></div>
-    </div>
-  </div>
   </div>
   <div id="loader">
     <div class="progress">
