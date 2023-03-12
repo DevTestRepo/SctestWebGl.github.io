@@ -44,7 +44,7 @@ script.onload = () => {
     })
         .then((unityInstance) => {
             unityGame = unityInstance;
-            loadingBar.style.display = "none";
+           // loadingBar.style.display = "none";
         })
         .catch((message) => {
             alert(message);
