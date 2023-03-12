@@ -43,19 +43,18 @@ createUnityInstance(canvas, config, (progress) => {
     })
         .then((unityInstance) => {
             unityGame = unityInstance;
-        
-            if (!gameInstance.Module) {
+            if (!unityInstance.Module) {
                 return;
             }
-            window.uarGameInstance = gameInstance;
-            if (!gameInstance.progress) {
+            window.uarGameInstance = unityInstance;
+            if (!unityInstance.progress) {
                 const progress = document.querySelector("#loader .progress");
                 progress.style.display = "block";
-                gameInstance.progress = progress.querySelector(".full");
+                unityInstance.progress = progress.querySelector(".full");
             }
-            gameInstance.progress.style.transform = `scaleX(${progress})`;
-            if (progress === 1 && !gameInstance.removeTimeout) {
-                gameInstance.removeTimeout = setTimeout(function () {
+            unityInstance.progress.style.transform = `scaleX(${progress})`;
+            if (progress === 1 && !unityInstance.removeTimeout) {
+                unityInstance.removeTimeout = setTimeout(function () {
                     loader.style.display = "none";
                 }, 0); // optionally set a delay in here.
             }
