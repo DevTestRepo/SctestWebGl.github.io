@@ -148,16 +148,19 @@
 
 
       <div id="rpm-container">
+       
+        <iframe id="rpm-frame" class="rpm-frame" allow="camera *; microphone *"></iframe>
+        <button id="rpm-hide-button" onclick="hideRpm()">Hide</button>
+      </div>
+      <canvas id="unity-canvas" >
+
         <div id="unity-loading-bar">
           <div id="unity-logo"></div>
           <div id="unity-progress-bar-empty">
             <div id="unity-progress-bar-full"></div>
           </div>
         </div>
-        <iframe id="rpm-frame" class="rpm-frame" allow="camera *; microphone *"></iframe>
-        <button id="rpm-hide-button" onclick="hideRpm()">Hide</button>
-      </div>
-      <canvas id="unity-canvas" ></canvas>
+      </canvas>
     </div>
  
   </div>
