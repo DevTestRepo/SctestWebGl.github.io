@@ -39,11 +39,11 @@ var script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
     createUnityInstance(canvas, config, (progress) => {
-       // progressBarFull.style.width = 100 * progress + "%";
+       progressBarFull.style.width = 100 * progress + "%";
     })
         .then((unityInstance) => {
             unityGame = unityInstance;
-            loadingBar.style.display = "none";
+          //  loadingBar.style.display = "none";
         })
         .catch((message) => {
             alert(message);
