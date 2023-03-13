@@ -40,6 +40,7 @@ script.src = loaderUrl;
 script.onload = () => {
     createUnityInstance(canvas, config, (progress) => {
        progressBarFull.style.width = 100 * progress + "%";
+       loadingBar.style.width=100*progress+ "%";
        console.log("progreeeeeeeeeeees"+progress);
     })
         .then((unityInstance) => {
