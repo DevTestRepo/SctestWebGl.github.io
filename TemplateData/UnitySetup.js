@@ -8,11 +8,11 @@
 
 
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/test.loader.js";
+var loaderUrl = buildUrl + "/New folder (3).loader.js";
 var config = {
-    dataUrl: buildUrl + "/test.data",
-    frameworkUrl: buildUrl + "/test.framework.js",
-    codeUrl: buildUrl + "/test.wasm",
+    dataUrl: buildUrl + "/New folder (3).data",
+    frameworkUrl: buildUrl + "/New folder (3).framework.js",
+    codeUrl: buildUrl + "/New folder (3).wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "DefaultCompany",
     productName: "PhotonReadyPlayerMeVuplex",
@@ -34,34 +34,19 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 }
 
 
-
+loadingBar.style.display = "block";
 var script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
-createUnityInstance(canvas, config, () => {
+    createUnityInstance(canvas, config, (progress) => {
+       // progressBarFull.style.width = 100 * progress + "%";
     })
         .then((unityInstance) => {
             unityGame = unityInstance;
-            if (!unityInstance.Module) {
-                return;
-            }
-            window.uarGameInstance = unityInstance;
-            if (!unityInstance.progress) {
-                const progress = document.querySelector("#loader .progress");
-                progress.style.display = "block";
-                unityInstance.progress = progress.querySelector(".full");
-            }
-            unityInstance.progress.style.transform = `scaleX(${progress})`;
-            if (progress === 1 && !unityInstance.removeTimeout) {
-                unityInstance.removeTimeout = setTimeout(function () {
-                    loader.style.display = "none";
-                }, 0); // optionally set a delay in here.
-            }
-
+            loadingBar.style.display = "none";
         })
         .catch((message) => {
             alert(message);
         });
 };
-
 document.body.appendChild(script);
