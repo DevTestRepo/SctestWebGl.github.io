@@ -50,18 +50,7 @@
   pointer-events: inherit;
 }
 
-.rpm-frame {
-  width: 100%;
-  height: 95%;
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-  Droid Sans, Helvetica Neue, sans-serif;
-  font-size: 14px;
-  border: none;
-  display:block;
-  pointer-events: inherit;
-}
+
         #loading-cover {
             position: absolute;
             top: 0;
@@ -79,6 +68,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+          
+
         }
 
         #unity-progress-bar-empty {
@@ -123,7 +114,18 @@
             transform: translateZ(0);
             animation: spinner-spin 1.1s infinite linear;
         }
-
+        .rpm-frame {
+  width: 100%;
+  height: 95%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+  Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  border: none;
+  display:block;
+  pointer-events: inherit;
+}
         @keyframes spinner-spin {
             0% {
                 transform: rotate(0deg);
@@ -136,16 +138,20 @@
     </style>
   </head>
   <body >
-   
   <div id="unity-container" class="unity-desktop">
-    <div id="unity-loading-bar">
-      <div id="unity-logo"></div>
-      <div id="unity-progress-bar-empty">
-        <div id="unity-progress-bar-full"></div>
+    <div id="canvas-wrap" >
+      <div id="rpm-container">
+        <iframe id="rpm-frame" class="rpm-frame" allow="camera *; microphone *"></iframe>
+        <button id="rpm-hide-button" onclick="hideRpm()">Hide</button>
       </div>
+      <canvas id="unity-canvas" ></canvas>
     </div>
-    
-  
+  <div id="unity-loading-bar">
+    <div id="unity-logo"></div>
+    <div id="unity-progress-bar-empty">
+      <div id="unity-progress-bar-full"></div>
+    </div>
+  </div>
   </div>
 
     <script src="TemplateData/Global.js"></script>
