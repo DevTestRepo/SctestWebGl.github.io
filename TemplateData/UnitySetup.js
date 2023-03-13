@@ -35,17 +35,20 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 
 
 loadingBar.style.display = "block";
+container.style.display="none"
 var script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
     createUnityInstance(canvas, config, (progress) => {
        progressBarFull.style.width = 100 * progress + "%";
        loadingBar.style.width=100*progress+ "%";
+      
        console.log("progreeeeeeeeeeees"+progress);
     })
         .then((unityInstance) => {
             unityGame = unityInstance;
           loadingBar.style.display = "none";
+          container.style.display="block"
         })
         .catch((message) => {
             alert(message);
