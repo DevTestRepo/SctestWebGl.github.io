@@ -10,9 +10,9 @@
 var buildUrl = "Build";
 var loaderUrl = buildUrl + "/SMTCopyBuild.loader.js";
 var config = {
-    dataUrl: buildUrl + "/SMTCopyBuild.data.br",
-    frameworkUrl: buildUrl + "/SMTCopyBuild.framework.js.br",
-    codeUrl: buildUrl + "/SMTCopyBuild.wasm.br",
+    dataUrl: buildUrl + "/SMTCopyBuild.data",
+    frameworkUrl: buildUrl + "/SMTCopyBuild.framework.js",
+    codeUrl: buildUrl + "/SMTCopyBuild.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "DefaultCompany",
     productName: "SMT",
