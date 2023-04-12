@@ -8,14 +8,14 @@
 
 
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/New folder (3).loader.js";
+var loaderUrl = buildUrl + "/SMTCopyBuild.loader.js";
 var config = {
-    dataUrl: buildUrl + "/New folder (3).data",
-    frameworkUrl: buildUrl + "/New folder (3).framework.js",
-    codeUrl: buildUrl + "/New folder (3).wasm",
+    dataUrl: buildUrl + "/SMTCopyBuild.data.br",
+    frameworkUrl: buildUrl + "/SMTCopyBuild.framework.js.br",
+    codeUrl: buildUrl + "/SMTCopyBuild.wasm.br",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "DefaultCompany",
-    productName: "PhotonReadyPlayerMeVuplex",
+    productName: "SMT",
     productVersion: "0.1",
 };
 
@@ -35,18 +35,16 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 
 
 loadingBar.style.display = "block";
-container.style.display="none"
+
 var script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
     createUnityInstance(canvas, config, (progress) => {
-       progressBarFull.style.width = 100 * progress + "%";      
-      
+        progressBarFull.style.width = 100 * progress + "%";
     })
         .then((unityInstance) => {
             unityGame = unityInstance;
-          loadingBar.style.display = "none";
-          container.style.display="block"
+            loadingBar.style.display = "none";
         })
         .catch((message) => {
             alert(message);
